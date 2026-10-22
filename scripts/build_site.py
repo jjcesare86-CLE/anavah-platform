@@ -86,7 +86,7 @@ NAV = """<a class="skip" href="#main">Skip to content</a>
       <li><a href="/#contact">Contact</a></li>
     </ul>
     <a href="{{BOOKING_URL}}" target="_blank" rel="noopener" class="btn btn-gold btn-sm nav-cta">Schedule <span class="arrow">→</span></a>
-    <button class="mobile-toggle" aria-label="Menu" aria-controls="navMenu" onclick="document.getElementById('navMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <button class="mobile-toggle" aria-label="Menu" aria-controls="navMenu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('navMenu').classList.toggle('open'))"><span></span><span></span><span></span></button>
   </div>
 </nav>"""
 
@@ -179,20 +179,20 @@ def wellness_body(d, n):
 
 PAGES = [
     dict(file="index.html", path="/", body="index", index=True,
-         title="Anavah Institute | Integrative Psychiatry & Care Coordination in Chelsea, Manhattan",
-         desc="Anavah Institute, led by Phillip Scherbakov, PMHNP, bridges mental health and physical medicine in Chelsea, Manhattan: psychiatric care, nutrition, exercise screening, integrative blood work and care coordination.",
+         title="Anavah Institute | Integrative Psychiatry in Chelsea, Manhattan",
+         desc="Anavah Institute, led by Phillip Scherbakov, PMHNP, bridges mental health and physical medicine in Chelsea, Manhattan: psychiatric care and care coordination.",
          scripts=["main.js", "orb.js", "contact.js"], ld=True),
     dict(file="patients.html", path="/patients", body="patients", index=True, crumb="For Patients",
          title="For Patients | Integrative Psychiatric Care | Anavah Institute",
-         desc="Integrative psychiatric care in Ohio and New York with Phillip Scherbakov, PMHNP. How to get started, services, private pay and insurance options. Begin with an initial consultation.",
+         desc="Integrative psychiatric care in Ohio and New York with Phillip Scherbakov, PMHNP. How to start, services, and private pay and insurance options.",
          scripts=["main.js"]),
     dict(file="providers.html", path="/providers", body="providers", index=True, crumb="For Professionals",
          title="For Healthcare Professionals | Anavah Institute",
-         desc="Education, consulting and a cross-disciplinary network for clinicians and healthcare organizations. Lunch and Learns, training and care-coordination support, available worldwide.",
+         desc="Education, consulting and a cross-disciplinary network for clinicians and healthcare organizations. Lunch and Learns and training, worldwide.",
          scripts=["main.js", "contact.js"]),
     dict(file="about.html", path="/about", body="about", index=True, crumb="About",
-         title="About Anavah Institute | Radical Responsibility and the Eight Dimensions of Wellness",
-         desc="Anavah is the Hebrew word for humility. Learn about our founding principle, the eight dimensions of wellness, the Anavah model of mind, body and coordination, and our founder Phillip Scherbakov, PMHNP.",
+         title="About Anavah Institute | Radical Responsibility and Wellness",
+         desc="Anavah is the Hebrew word for humility. Our founding principle, the eight dimensions of wellness, the Anavah model, and founder Phillip Scherbakov, PMHNP.",
          scripts=["main.js", "contact.js"]),
 ] + [
     dict(file=f"wellness-{d['slug']}.html", path=f"/wellness/{d['slug']}", body="wellness", html=wellness_body(d, i), index=True,
@@ -212,7 +212,7 @@ PAGES = [
          scripts=["main.js"]),
     dict(file="book.html", path="/book", body="book", index=True, crumb="Schedule",
          title="Schedule an Initial Consultation | Anavah Institute",
-         desc="Schedule an initial consultation with Anavah Institute. Patients and healthcare providers both start here. Clinical care in Ohio and New York; provider services worldwide.",
+         desc="Schedule a free initial consultation with Anavah Institute. Patients and providers start here. Clinical care in Ohio and New York.",
          scripts=["main.js"]),
     dict(file="book-internal.html", path="/book-internal", body="book-internal", index=False,
          title="Book an Appointment | Anavah Institute", desc="Book an appointment with Anavah Institute.",

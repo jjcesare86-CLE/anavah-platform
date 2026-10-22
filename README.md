@@ -8,7 +8,7 @@ Visitors ─▶ Render (FastAPI) ─▶ Supabase Postgres (data) + Supabase Auth
               │  ├─ /book        live booking calendar        ├─▶ Go High Level (email + SMS + CRM contact sync)
               │  ├─ /manage      client cancel/reschedule     ├─▶ ElevenLabs (Mia voice) ─ tools ─▶ /api/agent/*
               │  ├─ /admin       Phillip's back office        └─▶ Anthropic (Mia text chat)
-              └─ Render cron: reminders every 15 min
+              └─ (reminder cron removed; add it back only with BOOKING_MODE=internal)
 ```
 
 ## What Phillip gets (/admin)
@@ -55,8 +55,8 @@ gh repo create jjcesare86-CLE/anavah-platform --private --source=. --push
 7. Consider enabling MFA for admin users (Authentication → MFA).
 
 ## 3. Render
-1. Render → **New → Blueprint** → pick the repo (it reads `render.yaml`: one web service + one reminder cron job).
-2. Fill the prompted env vars (see `.env.example` for each). Minimum to go live: `DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `ADMIN_EMAILS`. The cron job needs `DATABASE_URL`, `SECRET_KEY` (same value as the web service), `GHL_*`, `BUSINESS_ADDRESS` too.
+1. Render → **New → Blueprint** → pick the repo (it reads `render.yaml`: one web service; `BOOKING_MODE=google` is preset. The reminder cron is only needed if you switch to `BOOKING_MODE=internal`, then re-add a cron service that runs `python -m app.jobs` every 15 minutes).
+2. Fill the prompted env vars (see `.env.example` for each). Minimum to go live: `DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `ADMIN_EMAILS`. Also set `BUSINESS_ADDRESS` (needed for email marketing) and keep `OUTREACH_DRY_RUN=true` until tested.
 3. Deploy. Open `https://<service>.onrender.com/` and `/admin`; sign in as Phillip. The first start auto-creates starter visit types and hours.
 4. **Custom domain**: Render → web service → Settings → Custom Domains → add `anavah-institute.org` and `www`. At the domain registrar (where DNS lives; since the client left IONOS hosting, make sure the domain itself is still registered and renewed) set the records Render shows. **Do not delete existing MX/TXT records** if email for `@anavah-institute.org` runs on the same domain. Set `SITE_URL=https://anavah-institute.org`, then rebuild the static pages' canonical URLs: `python scripts/build_site.py https://anavah-institute.org` and commit.
 5. Use at least the **Starter** plan (free web services sleep, which makes booking slow and breaks cron/webhooks).

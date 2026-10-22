@@ -149,3 +149,18 @@ def test_hero_video_wiring_and_fallbacks():
     js, css = text(SITE / "assets" / "main.js"), text(SITE / "assets" / "app.css")
     assert "saveData" in js and "prefers-reduced-motion" in js and "prefers-reduced-motion" in css
     assert 'class="sky"' in t, "animated clouds image stays as the fallback"
+
+
+def test_titles_unique_and_snippets_not_too_long():
+    titles = []
+    for p in HTML:
+        t = text(p)
+        title = re.search(r"<title>(.*?)</title>", t).group(1)
+        desc = re.search(r'name="description" content="(.*?)"', t).group(1)
+        assert len(title) <= 70 and len(desc) <= 160, p.name
+        titles.append(title)
+    assert len(titles) == len(set(titles))
+
+
+def test_mobile_menu_button_is_accessible():
+    assert 'aria-expanded="false"' in text(SITE / "patients.html")
