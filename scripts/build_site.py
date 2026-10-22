@@ -136,7 +136,7 @@ def subst(html):
 
 
 def render(p):
-    body = (SRC / f"{p['body']}.body.html").read_text()
+    body = (SRC / f"{p['body']}.body.html").read_text(encoding="utf-8")
     if p["body"] == "index":
         body = body.replace("<!--WHEEL-->", wheel())
     url = BASE + (p["path"] if p["path"] != "/404" else "/")
@@ -177,7 +177,7 @@ def render(p):
 def main():
     OUT.mkdir(exist_ok=True)
     for p in PAGES:
-        (OUT / p["file"]).write_text(render(p))
+        (OUT / p["file"]).write_text(render(p), encoding="utf-8")
     urls = [BASE + "/", BASE + "/book", BASE + "/privacy", BASE + "/terms"]  # /book = consultation page
     (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls) + "\n</urlset>\n")

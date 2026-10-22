@@ -161,7 +161,8 @@ def compute_slots(conn, appt_type: dict, d_from: date, d_to: date, now: datetime
 
 def local_label(dt: datetime) -> str:
     l = db.utc(dt).astimezone(tz())
-    return l.strftime("%A, %B %-d at %-I:%M %p %Z")
+    # %-d / %-I are not portable (fail on Windows), so format day and hour by hand
+    return f"{l.strftime('%A, %B')} {l.day} at {l.hour % 12 or 12}:{l.minute:02d} {l.strftime('%p %Z')}"
 
 
 # ---------- clients ----------

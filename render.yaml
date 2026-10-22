@@ -13,6 +13,8 @@ services:
         value: https://anavah-institute.org
       - key: TIMEZONE
         value: America/New_York
+      - key: BOOKING_MODE
+        value: google
       - key: OUTREACH_DRY_RUN
         value: "true"
       - key: OUTREACH_DAILY_CAP
@@ -43,33 +45,6 @@ services:
       - key: GHL_LOCATION_ID
         sync: false
       - key: NOTIFY_EMAIL
-        sync: false
-      - key: BUSINESS_ADDRESS
-        sync: false
-
-  # Sends appointment reminders every 15 minutes
-  - type: cron
-    name: anavah-reminders
-    runtime: python
-    plan: starter
-    schedule: "*/15 * * * *"
-    buildCommand: pip install -r requirements.txt
-    startCommand: python -m app.jobs
-    envVars:
-      - fromService: { type: web, name: anavah-platform, envVarKey: SITE_URL }
-      - key: PYTHON_VERSION
-        value: 3.12.4
-      - key: TIMEZONE
-        value: America/New_York
-      - key: OUTREACH_DRY_RUN
-        value: "true"
-      - key: SECRET_KEY
-        sync: false
-      - key: DATABASE_URL
-        sync: false
-      - key: GHL_TOKEN
-        sync: false
-      - key: GHL_LOCATION_ID
         sync: false
       - key: BUSINESS_ADDRESS
         sync: false
