@@ -1,0 +1,28 @@
+    <div class="contact-wrap">
+      <div class="reveal">
+        <div style="background:white;border:1px solid var(--rule);padding:36px;border-radius:4px;">
+          <form id="contactForm" novalidate>
+            <div class="form-group"><label class="form-label" for="cf-name">Name*</label><input id="cf-name" type="text" name="name" class="form-input" required autocomplete="name"></div>
+            <div class="form-group"><label class="form-label" for="cf-email">Email*</label><input id="cf-email" type="email" name="email" class="form-input" required autocomplete="email"></div>
+            <div class="form-group"><label class="form-label" for="cf-phone">Phone*</label><input id="cf-phone" type="tel" name="phone" class="form-input" required autocomplete="tel"></div>
+            <div class="form-group"><label class="form-label" for="cf-path">I am a...</label><select id="cf-path" name="pathway" class="form-select"><option value="Patient">Patient</option><option value="Healthcare Provider">Healthcare Provider</option><option value="Organization / Attorney / Employer">Organization / Attorney / Employer</option></select></div>
+            <div class="form-group"><label class="form-label" for="cf-msg">Other notes</label><textarea id="cf-msg" name="message" class="form-textarea" maxlength="1500"></textarea></div>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Send <span class="arrow">→</span></button>
+            <p id="cfStatus" role="status" style="font-size:14px;text-align:center;margin-top:12px;min-height:20px;"></p>
+            <p style="font-size:11.5px;color:var(--ink-muted);text-align:center;margin-top:6px;line-height:1.5;">Please don't include health details in this form. If this is an emergency, call 911; for crisis support call or text 988.</p>
+          </form>
+        </div>
+      </div>
+      <div class="contact-info reveal">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;margin-bottom:8px;">Anavah Institute</h3>
+        <div class="contact-detail"><div class="cd-label">Location</div><div style="font-size:16px;font-weight:500;">Chelsea, Manhattan, New York, NY, USA</div></div>
+        <div class="contact-detail"><div class="cd-label">Phone</div><a href="tel:+{{PHONE_HREF}}">{{PHONE}}</a></div>
+        <div class="contact-detail"><div class="cd-label">Fax</div><div style="font-size:16px;font-weight:500;">{{FAX}}</div></div>
+        <div class="contact-detail"><div class="cd-label">Email</div><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></div>
+        <div class="contact-detail"><div class="cd-label">Where we practice</div><div style="font-size:16px;font-weight:500;">Clinical care: {{STATES}}. Provider services: worldwide.</div></div>
+        <div class="contact-detail"><div class="cd-label">Community &amp; insurance visits</div><a href="{{SKOOL_URL}}" target="_blank" rel="noopener">Join the community</a> &middot; <a href="{{HEADWAY_URL}}" target="_blank" rel="noopener">Headway</a> &middot; <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="contact-detail" style="border-bottom:none;"><div class="cd-label">Schedule a Consultation</div><a href="{{BOOKING_URL}}" target="_blank" rel="noopener">Book online →</a></div>
+        <a href="{{BOOKING_URL}}" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:28px;">Schedule a Consultation <span class="arrow">→</span></a>
+      </div>
+    </div>
