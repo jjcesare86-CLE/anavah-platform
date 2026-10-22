@@ -139,3 +139,13 @@ def test_courses_and_community_copy():
     assert "Courses are coming soon and will be free to start." in text(SITE / "courses.html")
     c = text(SITE / "community.html")
     assert "911" in c and "988" in c and "identifying health details" in c and PRACTICE["skool_url"] in c
+
+
+def test_hero_video_wiring_and_fallbacks():
+    t = text(SITE / "index.html")
+    assert 'class="hero-video"' in t and 'poster="/assets/img/hero-poster.jpg"' in t and 'aria-hidden="true"' in t
+    assert "autoplay" not in t.split('class="hero-video"')[1].split(">")[0], "video is started by JS only when allowed"
+    assert (SITE / "assets" / "img" / "hero-poster.jpg").exists() and (SITE / "assets" / "img" / "hero-clouds.jpg").exists()
+    js, css = text(SITE / "assets" / "main.js"), text(SITE / "assets" / "app.css")
+    assert "saveData" in js and "prefers-reduced-motion" in js and "prefers-reduced-motion" in css
+    assert 'class="sky"' in t, "animated clouds image stays as the fallback"
