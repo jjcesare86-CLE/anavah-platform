@@ -56,17 +56,22 @@ async def not_found(request: Request, exc):
     return FileResponse(SITE / "404.html", status_code=404)
 
 
-PAGES = {"/": "index.html", "/privacy": "privacy.html", "/terms": "terms.html"}
+WELLNESS_SLUGS = ["emotional", "physical", "social", "occupational", "environmental", "intellectual", "spiritual", "financial"]
+PAGES = {"/": "index.html", "/privacy": "privacy.html", "/terms": "terms.html", "/patients": "patients.html", "/providers": "providers.html",
+         "/about": "about.html", "/courses": "courses.html", "/community": "community.html", "/accessibility": "accessibility.html",
+         "/hipaa-notice": "hipaa-notice.html",
+         **{f"/wellness/{d}": f"wellness-{d}.html" for d in WELLNESS_SLUGS}}
+NOINDEX_PAGES = {"/hipaa-notice"}  # draft notice: noindex meta in the page, plus this header
 
 
-def _page(name: str):
+def _page(name: str, noindex: bool = False):
     def handler():
-        return FileResponse(SITE / name)
+        return FileResponse(SITE / name, headers={"X-Robots-Tag": "noindex, nofollow"} if noindex else None)
     return handler
 
 
 for path, fname in PAGES.items():
-    app.add_api_route(path, _page(fname), methods=["GET"], include_in_schema=False)
+    app.add_api_route(path, _page(fname, path in NOINDEX_PAGES), methods=["GET"], include_in_schema=False)
 
 
 @app.get("/book", include_in_schema=False)

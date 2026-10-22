@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anavah Institute | Integrative Psychiatry &amp; Care Coordination in Chelsea, Manhattan</title>
-<meta name="description" content="Anavah Institute, led by Phillip Scherbakov, PMHNP, bridges mental health and physical medicine in Chelsea, Manhattan: psychiatric care, nutrition, exercise screening, integrative blood work and care coordination.">
+<title>Anavah Institute | Integrative Psychiatry in Chelsea, Manhattan</title>
+<meta name="description" content="Anavah Institute, led by Phillip Scherbakov, PMHNP, bridges mental health and physical medicine in Chelsea, Manhattan: psychiatric care and care coordination.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://anavah-institute.org/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Anavah Institute">
-<meta property="og:title" content="Anavah Institute | Integrative Psychiatry &amp; Care Coordination in Chelsea, Manhattan"><meta property="og:description" content="Anavah Institute, led by Phillip Scherbakov, PMHNP, bridges mental health and physical medicine in Chelsea, Manhattan: psychiatric care, nutrition, exercise screening, integrative blood work and care coordination.">
+<meta property="og:title" content="Anavah Institute | Integrative Psychiatry in Chelsea, Manhattan"><meta property="og:description" content="Anavah Institute, led by Phillip Scherbakov, PMHNP, bridges mental health and physical medicine in Chelsea, Manhattan: psychiatric care and care coordination.">
 <meta property="og:url" content="https://anavah-institute.org/"><meta property="og:image" content="https://anavah-institute.org/assets/img/hero-clouds.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F1E3A">
@@ -21,22 +21,26 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="site-nav" id="nav">
+<nav class="site-nav" id="nav" aria-label="Main">
   <div class="container nav-inner">
     <a href="/" class="site-logo"><span class="logo-mark"></span>Anavah<span class="tag">Institute</span></a>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="/#appointments">Patients</a></li>
-      <li><a href="/#services">Professionals</a></li>
-      <li><a href="/#about">About</a></li>
+      <li><a href="/patients">Patients</a></li>
+      <li><a href="/providers">Professionals</a></li>
+      <li><a href="/about">About</a></li>
+      <li class="has-sub"><a href="/about#dimensions" aria-haspopup="true">Wellness</a>
+        <ul class="sub-menu"><li><a href="/wellness/emotional">Emotional</a></li><li><a href="/wellness/physical">Physical</a></li><li><a href="/wellness/social">Social</a></li><li><a href="/wellness/occupational">Occupational</a></li><li><a href="/wellness/environmental">Environmental</a></li><li><a href="/wellness/intellectual">Intellectual</a></li><li><a href="/wellness/spiritual">Spiritual</a></li><li><a href="/wellness/financial">Financial</a></li></ul></li>
+      <li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Community</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
     <a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener" class="btn btn-gold btn-sm nav-cta">Schedule <span class="arrow">→</span></a>
-    <button class="mobile-toggle" aria-label="Menu" aria-controls="navMenu" onclick="document.getElementById('navMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <button class="mobile-toggle" aria-label="Menu" aria-controls="navMenu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('navMenu').classList.toggle('open'))"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <!-- ===== HERO — animated clouds ===== -->
 <section class="hero-clouds" id="top">
   <div class="sky"></div>
+  <video class="hero-video" muted loop playsinline preload="none" poster="/assets/img/hero-poster.jpg" aria-hidden="true" tabindex="-1" data-webm="/assets/img/hero.webm" data-mp4="/assets/img/hero.mp4"></video>
   <div class="sunglow"></div>
   <div class="mist"></div>
   <div class="mist two"></div>
@@ -208,9 +212,20 @@
         <ul><li>Exercise readiness Screening</li><li>Medication Management</li><li>Psychiatric Consultations</li><li>Referral Services</li><li>Report Generation</li></ul>
       </div>
     </div>
-    <p class="region-note reveal">Clinical care is limited to <strong>Ohio and New York</strong>. Provider services are available worldwide. Every journey begins with an initial consultation; fees are discussed on that call.</p>
+    <p class="region-note reveal">Clinical care is limited to <strong>Ohio and New York</strong>. Provider services are available worldwide. Every journey begins with an initial consultation, which is free for now; fees for ongoing care are discussed on that call.</p>
     <div class="appt-cta reveal"><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener" class="btn btn-gold">Schedule a Consultation <span class="arrow">→</span></a></div>
     <p class="edu-note reveal">Information on this site about peptides, supplements or medications is educational only. Any treatment decision is made with a licensed prescriber.</p>
+  </div>
+</section>
+
+<!-- ===== COMMUNITY ===== -->
+<section class="section-pad" id="community" style="padding:70px 0;background:var(--bg-warm)">
+  <div class="container reveal" style="text-align:center;max-width:760px">
+    <span class="label">Community</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,4vw,52px);margin:10px 0 14px">Join the <em style="color:var(--gold)">Anavah community</em></h2>
+    <p style="line-height:1.7;color:var(--ink-soft);margin-bottom:22px">A free community on Skool for patients and healthcare providers. Phillip will use it to explain what Anavah is about, to teach, and to share what is coming next, including courses. It is not medical care and not for emergencies; please do not share health details.</p>
+    <a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener" class="btn btn-gold">Join on Skool <span class="arrow">→</span></a>
+    <a href="/community" class="btn btn-ghost" style="margin-left:10px">About the community</a>
   </div>
 </section>
 
@@ -226,7 +241,7 @@
 <section class="section-pad" id="contact">
   <div class="container">
     <div class="section-header reveal"><div class="meta"><span class="label">Contact Us</span></div><h2>Drop us <em>a line.</em></h2></div>
-    <div class="contact-wrap">
+        <div class="contact-wrap">
       <div class="reveal">
         <div style="background:white;border:1px solid var(--rule);padding:36px;border-radius:4px;">
           <form id="contactForm" novalidate>
@@ -254,6 +269,7 @@
         <a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:28px;">Schedule a Consultation <span class="arrow">→</span></a>
       </div>
     </div>
+
     <div class="map-embed reveal">
       <iframe title="Anavah Institute — Chelsea, Manhattan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Chelsea,+Manhattan,+New+York,+NY&z=14&output=embed"></iframe>
     </div>
@@ -268,9 +284,9 @@
         <p class="footer-blurb">The connective tissue between mental health and physical medicine. Integrative care, coordinated.<br>Chelsea, Manhattan, New York, NY, USA<br>Clinical care in Ohio and New York &middot; Provider services worldwide</p>
         <div class="contact-line"><a href="mailto:Scherb@anavah-institute.org">Scherb@anavah-institute.org</a><a href="tel:+12166250028">(216) 625-0028</a><span>Fax (216) 625-0053</span></div>
       </div>
-      <div class="footer-col"><h6>Patients</h6><ul><li><a href="/#appointments">Appointments</a></li><li><a href="/#services">Our Services</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Schedule a Consultation</a></li><li><a href="https://care.headway.co/providers/phillip-scherbakov-2" target="_blank" rel="noopener">Headway profile</a></li><li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Community</a></li></ul></div>
-      <div class="footer-col"><h6>Clinicians</h6><ul><li><a href="/#services">Connecting Clinicians</a></li><li><a href="/#appointments">Lunch and Learns</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Consultation Calls</a></li><li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Clinician community</a></li></ul></div>
-      <div class="footer-col"><h6>Institute</h6><ul><li><a href="/#about">About Phillip</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.linkedin.com/in/phillip-scherbakov/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="/terms">Terms and Conditions</a></li><li><a href="/privacy">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h6>Patients</h6><ul><li><a href="/patients">For Patients</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Schedule a Consultation</a></li><li><a href="https://care.headway.co/providers/phillip-scherbakov-2" target="_blank" rel="noopener">Headway profile</a></li><li><a href="/community">Community</a></li><li><a href="/courses">Courses</a></li></ul></div>
+      <div class="footer-col"><h6>Professionals</h6><ul><li><a href="/providers">For Professionals</a></li><li><a href="/providers#contact">Lunch and Learns</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Consultation Calls</a></li><li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Clinician community</a></li></ul></div>
+      <div class="footer-col"><h6>Institute</h6><ul><li><a href="/about">About</a></li><li><a href="/about#leadership">About Phillip</a></li><li><a href="/about#dimensions">Eight dimensions of wellness</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.linkedin.com/in/phillip-scherbakov/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="/accessibility">Accessibility</a></li><li><a href="/terms">Terms and Conditions</a></li><li><a href="/privacy">Privacy Policy</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>Copyright &copy; 2026 Anavah Institute - All Rights Reserved.</span>

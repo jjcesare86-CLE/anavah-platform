@@ -17,21 +17,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/app.css">
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://anavah-institute.org/terms#webpage", "url": "https://anavah-institute.org/terms", "name": "Terms and Conditions | Anavah Institute", "description": "Terms of use for the Anavah Institute website and online booking.", "isPartOf": {"@type": "WebSite", "name": "Anavah Institute", "url": "https://anavah-institute.org/"}, "about": {"@type": "MedicalBusiness", "name": "Anavah Institute", "url": "https://anavah-institute.org/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anavah-institute.org/"}, {"@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://anavah-institute.org/terms"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="site-nav" id="nav">
+<nav class="site-nav" id="nav" aria-label="Main">
   <div class="container nav-inner">
     <a href="/" class="site-logo"><span class="logo-mark"></span>Anavah<span class="tag">Institute</span></a>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="/#appointments">Patients</a></li>
-      <li><a href="/#services">Professionals</a></li>
-      <li><a href="/#about">About</a></li>
+      <li><a href="/patients">Patients</a></li>
+      <li><a href="/providers">Professionals</a></li>
+      <li><a href="/about">About</a></li>
+      <li class="has-sub"><a href="/about#dimensions" aria-haspopup="true">Wellness</a>
+        <ul class="sub-menu"><li><a href="/wellness/emotional">Emotional</a></li><li><a href="/wellness/physical">Physical</a></li><li><a href="/wellness/social">Social</a></li><li><a href="/wellness/occupational">Occupational</a></li><li><a href="/wellness/environmental">Environmental</a></li><li><a href="/wellness/intellectual">Intellectual</a></li><li><a href="/wellness/spiritual">Spiritual</a></li><li><a href="/wellness/financial">Financial</a></li></ul></li>
+      <li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Community</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
     <a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener" class="btn btn-gold btn-sm nav-cta">Schedule <span class="arrow">→</span></a>
-    <button class="mobile-toggle" aria-label="Menu" aria-controls="navMenu" onclick="document.getElementById('navMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <button class="mobile-toggle" aria-label="Menu" aria-controls="navMenu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('navMenu').classList.toggle('open'))"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <main class="legal" id="main"><div class="container narrow">
@@ -47,7 +50,7 @@
   <p>Nothing on this website, including the Mia chat and voice assistant, is medical advice, diagnosis, or treatment, and it does not create a clinician–patient relationship. <strong>If you are in an emergency, call 911. For crisis support, call or text 988.</strong></p>
 
   <h2>Appointments</h2>
-  <p>Initial consultations are scheduled through our Google Calendar page and are subject to confirmation by the practice. Fees are discussed on the consultation call. Please contact the office about any late-cancellation or missed-appointment policy that applies to your visit. Insurance participation varies by plan; contact us before your visit to confirm coverage.</p>
+  <p>Initial consultations are scheduled through our Google Calendar page and are subject to confirmation by the practice. The initial consultation is free for now; fees for ongoing care are discussed on that call. Please contact the office about any late-cancellation or missed-appointment policy that applies to your visit. Insurance participation varies by plan; contact us before your visit to confirm coverage.</p>
 
   <h2>Good Faith Estimate</h2>
   <p>If you are uninsured or not using insurance, you have the right to receive a Good Faith Estimate of expected charges before you receive care. Ask us when you schedule or at any time. For more information visit <a href="https://www.cms.gov/nosurprises" target="_blank" rel="noopener">cms.gov/nosurprises</a>.</p>
@@ -82,9 +85,9 @@
         <p class="footer-blurb">The connective tissue between mental health and physical medicine. Integrative care, coordinated.<br>Chelsea, Manhattan, New York, NY, USA<br>Clinical care in Ohio and New York &middot; Provider services worldwide</p>
         <div class="contact-line"><a href="mailto:Scherb@anavah-institute.org">Scherb@anavah-institute.org</a><a href="tel:+12166250028">(216) 625-0028</a><span>Fax (216) 625-0053</span></div>
       </div>
-      <div class="footer-col"><h6>Patients</h6><ul><li><a href="/#appointments">Appointments</a></li><li><a href="/#services">Our Services</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Schedule a Consultation</a></li><li><a href="https://care.headway.co/providers/phillip-scherbakov-2" target="_blank" rel="noopener">Headway profile</a></li><li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Community</a></li></ul></div>
-      <div class="footer-col"><h6>Clinicians</h6><ul><li><a href="/#services">Connecting Clinicians</a></li><li><a href="/#appointments">Lunch and Learns</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Consultation Calls</a></li><li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Clinician community</a></li></ul></div>
-      <div class="footer-col"><h6>Institute</h6><ul><li><a href="/#about">About Phillip</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.linkedin.com/in/phillip-scherbakov/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="/terms">Terms and Conditions</a></li><li><a href="/privacy">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h6>Patients</h6><ul><li><a href="/patients">For Patients</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Schedule a Consultation</a></li><li><a href="https://care.headway.co/providers/phillip-scherbakov-2" target="_blank" rel="noopener">Headway profile</a></li><li><a href="/community">Community</a></li><li><a href="/courses">Courses</a></li></ul></div>
+      <div class="footer-col"><h6>Professionals</h6><ul><li><a href="/providers">For Professionals</a></li><li><a href="/providers#contact">Lunch and Learns</a></li><li><a href="https://calendar.app.google/WhZgHS8WDVCT1ZDKA" target="_blank" rel="noopener">Consultation Calls</a></li><li><a href="https://www.skool.com/@phillip-scherbakov-4815" target="_blank" rel="noopener">Clinician community</a></li></ul></div>
+      <div class="footer-col"><h6>Institute</h6><ul><li><a href="/about">About</a></li><li><a href="/about#leadership">About Phillip</a></li><li><a href="/about#dimensions">Eight dimensions of wellness</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.linkedin.com/in/phillip-scherbakov/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="/accessibility">Accessibility</a></li><li><a href="/terms">Terms and Conditions</a></li><li><a href="/privacy">Privacy Policy</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>Copyright &copy; 2026 Anavah Institute - All Rights Reserved.</span>

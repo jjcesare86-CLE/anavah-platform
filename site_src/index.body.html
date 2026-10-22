@@ -1,6 +1,7 @@
 <!-- ===== HERO — animated clouds ===== -->
 <section class="hero-clouds" id="top">
   <div class="sky"></div>
+  <video class="hero-video" muted loop playsinline preload="none" poster="/assets/img/hero-poster.jpg" aria-hidden="true" tabindex="-1" data-webm="/assets/img/hero.webm" data-mp4="/assets/img/hero.mp4"></video>
   <div class="sunglow"></div>
   <div class="mist"></div>
   <div class="mist two"></div>
@@ -155,9 +156,20 @@
         <ul><li>Exercise readiness Screening</li><li>Medication Management</li><li>Psychiatric Consultations</li><li>Referral Services</li><li>Report Generation</li></ul>
       </div>
     </div>
-    <p class="region-note reveal">Clinical care is limited to <strong>Ohio and New York</strong>. Provider services are available worldwide. Every journey begins with an initial consultation; fees are discussed on that call.</p>
+    <p class="region-note reveal">Clinical care is limited to <strong>Ohio and New York</strong>. Provider services are available worldwide. Every journey begins with an initial consultation, which is free for now; fees for ongoing care are discussed on that call.</p>
     <div class="appt-cta reveal"><a href="{{BOOKING_URL}}" target="_blank" rel="noopener" class="btn btn-gold">Schedule a Consultation <span class="arrow">→</span></a></div>
     <p class="edu-note reveal">Information on this site about peptides, supplements or medications is educational only. Any treatment decision is made with a licensed prescriber.</p>
+  </div>
+</section>
+
+<!-- ===== COMMUNITY ===== -->
+<section class="section-pad" id="community" style="padding:70px 0;background:var(--bg-warm)">
+  <div class="container reveal" style="text-align:center;max-width:760px">
+    <span class="label">Community</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,4vw,52px);margin:10px 0 14px">Join the <em style="color:var(--gold)">Anavah community</em></h2>
+    <p style="line-height:1.7;color:var(--ink-soft);margin-bottom:22px">A free community on Skool for patients and healthcare providers. Phillip will use it to explain what Anavah is about, to teach, and to share what is coming next, including courses. It is not medical care and not for emergencies; please do not share health details.</p>
+    <a href="{{SKOOL_URL}}" target="_blank" rel="noopener" class="btn btn-gold">Join on Skool <span class="arrow">→</span></a>
+    <a href="/community" class="btn btn-ghost" style="margin-left:10px">About the community</a>
   </div>
 </section>
 
@@ -173,34 +185,7 @@
 <section class="section-pad" id="contact">
   <div class="container">
     <div class="section-header reveal"><div class="meta"><span class="label">Contact Us</span></div><h2>Drop us <em>a line.</em></h2></div>
-    <div class="contact-wrap">
-      <div class="reveal">
-        <div style="background:white;border:1px solid var(--rule);padding:36px;border-radius:4px;">
-          <form id="contactForm" novalidate>
-            <div class="form-group"><label class="form-label" for="cf-name">Name*</label><input id="cf-name" type="text" name="name" class="form-input" required autocomplete="name"></div>
-            <div class="form-group"><label class="form-label" for="cf-email">Email*</label><input id="cf-email" type="email" name="email" class="form-input" required autocomplete="email"></div>
-            <div class="form-group"><label class="form-label" for="cf-phone">Phone*</label><input id="cf-phone" type="tel" name="phone" class="form-input" required autocomplete="tel"></div>
-            <div class="form-group"><label class="form-label" for="cf-path">I am a...</label><select id="cf-path" name="pathway" class="form-select"><option value="Patient">Patient</option><option value="Healthcare Provider">Healthcare Provider</option><option value="Organization / Attorney / Employer">Organization / Attorney / Employer</option></select></div>
-            <div class="form-group"><label class="form-label" for="cf-msg">Other notes</label><textarea id="cf-msg" name="message" class="form-textarea" maxlength="1500"></textarea></div>
-            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
-            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Send <span class="arrow">→</span></button>
-            <p id="cfStatus" role="status" style="font-size:14px;text-align:center;margin-top:12px;min-height:20px;"></p>
-            <p style="font-size:11.5px;color:var(--ink-muted);text-align:center;margin-top:6px;line-height:1.5;">Please don't include health details in this form. If this is an emergency, call 911; for crisis support call or text 988.</p>
-          </form>
-        </div>
-      </div>
-      <div class="contact-info reveal">
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;margin-bottom:8px;">Anavah Institute</h3>
-        <div class="contact-detail"><div class="cd-label">Location</div><div style="font-size:16px;font-weight:500;">Chelsea, Manhattan, New York, NY, USA</div></div>
-        <div class="contact-detail"><div class="cd-label">Phone</div><a href="tel:+{{PHONE_HREF}}">{{PHONE}}</a></div>
-        <div class="contact-detail"><div class="cd-label">Fax</div><div style="font-size:16px;font-weight:500;">{{FAX}}</div></div>
-        <div class="contact-detail"><div class="cd-label">Email</div><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></div>
-        <div class="contact-detail"><div class="cd-label">Where we practice</div><div style="font-size:16px;font-weight:500;">Clinical care: {{STATES}}. Provider services: worldwide.</div></div>
-        <div class="contact-detail"><div class="cd-label">Community &amp; insurance visits</div><a href="{{SKOOL_URL}}" target="_blank" rel="noopener">Join the community</a> &middot; <a href="{{HEADWAY_URL}}" target="_blank" rel="noopener">Headway</a> &middot; <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn</a></div>
-        <div class="contact-detail" style="border-bottom:none;"><div class="cd-label">Schedule a Consultation</div><a href="{{BOOKING_URL}}" target="_blank" rel="noopener">Book online →</a></div>
-        <a href="{{BOOKING_URL}}" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:28px;">Schedule a Consultation <span class="arrow">→</span></a>
-      </div>
-    </div>
+    <!--CONTACT-->
     <div class="map-embed reveal">
       <iframe title="Anavah Institute — Chelsea, Manhattan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Chelsea,+Manhattan,+New+York,+NY&z=14&output=embed"></iframe>
     </div>
