@@ -110,7 +110,7 @@ FOOTER = """<footer class="site-footer">
 </footer>"""
 
 CRISIS_NOTE = '<p class="crisis-note"><strong>This page is not for emergencies.</strong> If you are in immediate danger, call 911. For crisis support, call or text the 988 Suicide and Crisis Lifeline.</p>'
-REGION_NOTE = '<p class="region-note">Clinical care is limited to <strong>{{STATES}}</strong>. Provider services are available worldwide. Fees are discussed on your consultation call.</p>'
+REGION_NOTE = '<p class="region-note">Clinical care is limited to <strong>{{STATES}}</strong>. Provider services are available worldwide. The initial consultation is free for now; fees for ongoing care are discussed on that call.</p>'
 
 
 def h(t):

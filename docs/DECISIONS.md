@@ -25,15 +25,21 @@ Each answer, what it means for the build, and what is still open. Items marked *
 - Google Workspace: confirm the BAA is accepted in the Admin console and that **Calendar appointment schedules** are covered in Google's current HIPAA services list. Until confirmed, the scheduling page asks only for name, email and phone.
 - If Phillip wants Supabase, GHL, ElevenLabs or Anthropic to ever handle patient data, each needs its own HIPAA plan and BAA first.
 
-## Still open (blocking or nearly)
-1. **Which Google account owns the booking page?** Phillip's message was cut off after "assuming that my google account is…". The build uses the calendar link already in the v1.3 sample: `https://calendar.app.google/WhZgHS8WDVCT1ZDKA`. Confirm it is his and that the appointment schedule is set up the way he wants (duration, availability, questions limited to name/email/phone).
-2. **Is the consultation free?** The brief says "free consultation call"; his answer says fees come after the consult. The site says "initial consultation" and does not say "free" until he confirms.
-3. **Cell (330) 808-3383:** publish it, or keep it for internal use only? Default: not published.
-4. **Notice of Privacy Practices:** does he have one? Which EHR/billing system is the record system (SimplePractice, other)? Which patient portal, if any, should the "Patient portal" link go to?
-5. **Legal:** entity name, mailing address (needed for email marketing), governing-law state (the brief's Ohio + AAA clause vs a NY practice), counsel review of privacy/terms.
-6. **Peptide listings:** the original copy lists "Peptide therapy" and "Peptide Integrations". Kept for now with the educational disclaimer; Phillip decides whether to keep them as listed services.
-7. **Statistics (68%, 1 in 3, $935B):** need sources or they are cut.
-8. **Missing copy:** "Who joins", provider/B2B tiers (not needed while courses are free), "vetted network" criteria, "Anavah Play", a sentence on what Skool is for.
-9. **Assets:** logo file (circles vs triangle mark), Phillip's approved photo and bio with rights confirmed, "ALL CLINICAL FORMS" content (the brief's link could not be opened).
-10. **Skool setup:** who moderates, and a pinned crisis-resources post.
-11. **IONOS password** was shared in plain text in the brief: change it.
+## Follow-up answers (John, relayed from Phillip)
+1. **Booking account:** Phillip.Scherbakov@gmail.com owns the Google Calendar page. Still to verify that the link in `practice.json` belongs to it and the appointment schedule asks only for name, email and phone.
+2. **Consultation:** free for now. Site and Mia say "free initial consultation"; fees for ongoing care are discussed on that call. Revisit when this changes.
+3. **Cell (330) 808-3383:** do not publish. Not on the site.
+4. **Notice of Privacy Practices:** an interim version is on the unlinked, noindex `/hipaa-notice` page (effective Oct 22, 2026) under the Draft banner. Link it only after counsel or the records vendor approves; swap in their final text.
+5. **Legal details (entity, address, governing law):** will come later.
+6. **Peptide listings:** kept, with the educational disclaimer. Statistics: no primary source found for 68%, 1 in 3 or $935B, so they stay cut. `/about` instead cites Aaron et al. (2025), JAMA Network Open 8(3):e250268: about 39% depression and 40% anxiety symptoms among adults with chronic pain.
+7. **Logo and photo:** already in the HTML.
+8. **Skool:** linked from nav, footer, a home-page community band, `/community`, `/courses`, `/patients` and `/providers`.
+
+## Still open
+1. Verify the booking link belongs to Phillip.Scherbakov@gmail.com and the schedule's settings.
+2. Records system (SimplePractice, other) and any patient portal URL (set `portal_url`).
+3. Final Notice of Privacy Practices; counsel review of privacy and terms; entity name, mailing address, governing-law state.
+4. Missing copy: "vetted network" criteria, "Anavah Play", a sentence on what Skool is for (a draft is on `/community`).
+5. Skool setup: who moderates, and a pinned crisis-resources post.
+6. IONOS password was shared in plain text in the brief: change it.
+7. Phillip to approve softened wording and the unconfirmed provider offerings (shared protocols, vetted network, B2B subscriptions).

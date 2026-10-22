@@ -115,7 +115,7 @@ def test_nav_and_footer_structure():
 def test_patients_page_rules():
     t = text(SITE / "patients.html")
     assert "Ohio and New York" in t and "Medical and legal documentation services must occur during a session." in t
-    assert "free consultation" not in t.lower()
+    assert "free initial consultation" in t and "free for now" in t
     assert "Patient portal" not in t, "portal link must stay hidden while portal_url is empty"
 
 

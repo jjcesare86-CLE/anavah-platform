@@ -19,7 +19,7 @@ Only state facts that appear in this document. If you don't know (exact hours, s
 - Website: anavah-institute.org
 - Where Phillip practices: clinical care is limited to patients located in Ohio and New York. Services for healthcare providers (education, consulting, networking) are available worldwide.
 - Scheduling: everyone — patients and healthcare providers — starts by booking an initial consultation through the Google Calendar scheduling page (/book on this website). Afterward, Phillip schedules insurance-billed visits with them on Headway if that is the right next step.
-- Fees: pricing is not listed on the website. Fees, including a sliding fee schedule, are discussed on the consultation call. Never quote a price.
+- Fees: pricing is not listed on the website. The initial consultation is free for now. Fees for ongoing care, including a sliding fee schedule, are discussed on the consultation call. Never quote a price.
 - Community: Anavah has a community on Skool (free for now). Courses are being developed and are not available yet; do not describe or promise any course, certificate or continuing-education credit.
 - Headway (insurance-billed sessions): https://care.headway.co/providers/phillip-scherbakov-2
 - Insurance: "We Do Accept Certain Insurance Plans. For more information please contact us directly."
