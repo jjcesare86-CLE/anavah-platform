@@ -1,0 +1,86 @@
+<main class="bk" id="main">
+  <div class="container bk-wrap">
+    <header class="bk-head">
+      <span class="label">Appointments</span>
+      <h1>Book a visit</h1>
+      <p>Choose a visit type, pick a time, and you'll receive an instant confirmation by email. If this is an emergency, call 911. For crisis support, call or text 988.</p>
+    </header>
+
+    <ol class="bk-steps" id="bkSteps" aria-label="Progress">
+      <li class="on" data-s="1">Visit</li><li data-s="2">Time</li><li data-s="3">Details</li><li data-s="4">Done</li>
+    </ol>
+
+    <div id="bookApp">
+      <noscript><p>Online booking needs JavaScript. Please call <a href="tel:+{{PHONE_HREF}}">{{PHONE}}</a>.</p></noscript>
+
+      <!-- Step 1 -->
+      <section class="bk-panel" id="stepType">
+        <div class="bk-tabs" role="tablist" id="audTabs">
+          <button role="tab" class="on" data-aud="patient">I'm a patient</button>
+          <button role="tab" data-aud="provider">I'm a healthcare provider</button>
+        </div>
+        <div class="bk-types" id="typeList" aria-live="polite"><p class="muted">Loading visit types…</p></div>
+      </section>
+
+      <!-- Step 2 -->
+      <section class="bk-panel" id="stepTime" hidden>
+        <button class="bk-back" data-back="1">← Change visit</button>
+        <h2 id="timeTitle">Pick a time</h2>
+        <p class="muted" id="tzNote"></p>
+        <div class="bk-cal">
+          <div class="cal-box">
+            <div class="cal-nav"><button id="calPrev" aria-label="Previous month">‹</button><strong id="calMonth"></strong><button id="calNext" aria-label="Next month">›</button></div>
+            <div class="cal-dow"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+          <div class="slot-box">
+            <h3 id="slotDay">Select a date</h3>
+            <div class="slot-list" id="slotList"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3 -->
+      <section class="bk-panel" id="stepDetails" hidden>
+        <button class="bk-back" data-back="2">← Change time</button>
+        <h2>Your details</h2>
+        <div class="bk-summary" id="sumBox"></div>
+        <form id="bookForm" novalidate>
+          <div class="bk-row">
+            <div class="form-group"><label class="form-label" for="b-fn">First name*</label><input class="form-input" id="b-fn" name="first_name" required autocomplete="given-name" maxlength="80"></div>
+            <div class="form-group"><label class="form-label" for="b-ln">Last name*</label><input class="form-input" id="b-ln" name="last_name" required autocomplete="family-name" maxlength="80"></div>
+          </div>
+          <div class="bk-row">
+            <div class="form-group"><label class="form-label" for="b-em">Email*</label><input class="form-input" id="b-em" type="email" name="email" required autocomplete="email"></div>
+            <div class="form-group"><label class="form-label" for="b-ph">Phone</label><input class="form-input" id="b-ph" type="tel" name="phone" autocomplete="tel" maxlength="40"></div>
+          </div>
+          <div class="form-group" id="modeGroup" hidden>
+            <label class="form-label">How would you like to meet?</label>
+            <div class="bk-radio"><label><input type="radio" name="mode" value="telehealth" checked> Telehealth</label><label><input type="radio" name="mode" value="in_person"> In person (Chelsea, Manhattan)</label></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="b-msg">Anything the office should know? (optional)</label><textarea class="form-textarea" id="b-msg" name="message" maxlength="1000" placeholder="Scheduling notes only — please don't include health details."></textarea></div>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
+          <label class="bk-check"><input type="checkbox" name="ack" required> <span>I understand this form is not for emergencies and I shouldn't share health details here. *</span></label>
+          <label class="bk-check"><input type="checkbox" name="sms_consent"> <span>Text me appointment reminders at the number above. Message &amp; data rates may apply; reply STOP to opt out. Consent isn't required to book.</span></label>
+          <p class="bk-error" id="bkError" role="alert" hidden></p>
+          <button class="btn btn-gold" type="submit" id="bkSubmit">Confirm appointment <span class="arrow">→</span></button>
+          <p class="muted small">By booking you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
+        </form>
+      </section>
+
+      <!-- Step 4 -->
+      <section class="bk-panel" id="stepDone" hidden>
+        <div class="bk-done">
+          <div class="bk-check-ic">✓</div>
+          <h2>You're booked.</h2>
+          <p id="doneText"></p>
+          <div class="bk-done-actions">
+            <a class="btn btn-gold" id="doneIcs" href="#">Add to calendar <span class="arrow">→</span></a>
+            <a class="btn" id="doneManage" href="#">Change or cancel</a>
+          </div>
+          <p class="muted small">A confirmation email is on its way. Keep the link in it to change or cancel.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>

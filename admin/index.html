@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Anavah Admin</title>
+<link rel="icon" href="/assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/static/admin.css">
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form id="loginForm" class="login-card">
+    <div class="brand"><span class="logo-mark"></span> Anavah <small>Admin</small></div>
+    <label>Email<input type="email" name="email" required autocomplete="username"></label>
+    <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+    <p class="err" id="loginErr" hidden></p>
+    <button class="btn primary" type="submit">Sign in</button>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <aside class="side">
+    <div class="brand"><span class="logo-mark"></span> Anavah <small>Admin</small></div>
+    <nav id="nav">
+      <a href="#/dashboard" data-r="dashboard">Dashboard</a>
+      <a href="#/calendar" data-r="calendar">Calendar</a>
+      <a href="#/clients" data-r="clients">Clients</a>
+      <a href="#/prospects" data-r="prospects">Prospects</a>
+      <a href="#/outreach" data-r="outreach">Outreach</a>
+      <a href="#/messages" data-r="messages">Message log</a>
+      <a href="#/settings" data-r="settings">Settings</a>
+    </nav>
+    <div class="side-foot"><span id="who"></span><button class="link" id="logout">Sign out</button><a class="link" href="/" target="_blank">View site ↗</a></div>
+  </aside>
+  <main class="main">
+    <div id="banner"></div>
+    <div id="view"></div>
+  </main>
+</div>
+
+<dialog id="dlg"><div id="dlgBody"></div></dialog>
+<div id="toast" role="status"></div>
+<script src="/admin/static/admin.js"></script>
+</body>
+</html>

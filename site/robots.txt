@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /manage
+Sitemap: https://anavah-institute.org/sitemap.xml

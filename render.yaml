@@ -1,0 +1,75 @@
+services:
+  - type: web
+    name: anavah-platform
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app.main:app -k uvicorn.workers.UvicornWorker -w 2 -b 0.0.0.0:$PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: SITE_URL
+        value: https://anavah-institute.org
+      - key: TIMEZONE
+        value: America/New_York
+      - key: OUTREACH_DRY_RUN
+        value: "true"
+      - key: OUTREACH_DAILY_CAP
+        value: "40"
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-5-5
+      - key: SECRET_KEY
+        generateValue: true
+      - key: AGENT_WEBHOOK_SECRET
+        generateValue: true
+      # Secrets below are entered in the Render dashboard (sync: false = not stored in git)
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_AGENT_ID
+        sync: false
+      - key: GHL_TOKEN
+        sync: false
+      - key: GHL_LOCATION_ID
+        sync: false
+      - key: NOTIFY_EMAIL
+        sync: false
+      - key: BUSINESS_ADDRESS
+        sync: false
+
+  # Sends appointment reminders every 15 minutes
+  - type: cron
+    name: anavah-reminders
+    runtime: python
+    plan: starter
+    schedule: "*/15 * * * *"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m app.jobs
+    envVars:
+      - fromService: { type: web, name: anavah-platform, envVarKey: SITE_URL }
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: TIMEZONE
+        value: America/New_York
+      - key: OUTREACH_DRY_RUN
+        value: "true"
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: GHL_TOKEN
+        sync: false
+      - key: GHL_LOCATION_ID
+        sync: false
+      - key: BUSINESS_ADDRESS
+        sync: false

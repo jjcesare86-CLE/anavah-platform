@@ -1,0 +1,35 @@
+<main class="bk" id="main">
+  <div class="container bk-wrap">
+    <header class="bk-head">
+      <span class="label">Your appointment</span>
+      <h1>Manage appointment</h1>
+    </header>
+    <div id="manageApp">
+      <section class="bk-panel" id="mLoading"><p class="muted">Loading…</p></section>
+      <section class="bk-panel" id="mMissing" hidden><h2>We couldn't find that appointment</h2><p>The link may be incomplete. Please call <a href="tel:+{{PHONE_HREF}}">{{PHONE}}</a> or <a href="{{BOOKING_URL}}" target="_blank" rel="noopener">book a new visit</a>.</p></section>
+      <section class="bk-panel" id="mView" hidden>
+        <div class="bk-summary" id="mSummary"></div>
+        <div class="bk-done-actions" id="mActions">
+          <button class="btn btn-gold" id="mResched" type="button">Reschedule <span class="arrow">→</span></button>
+          <button class="btn" id="mCancel" type="button">Cancel appointment</button>
+          <a class="btn btn-ghost" id="mIcs" href="#">Add to calendar</a>
+        </div>
+        <p class="bk-error" id="mError" role="alert" hidden></p>
+        <p class="muted small" id="mNote"></p>
+      </section>
+      <section class="bk-panel" id="mPick" hidden>
+        <button class="bk-back" id="mPickBack" type="button">← Back</button>
+        <h2>Pick a new time</h2>
+        <p class="muted" id="tzNote"></p>
+        <div class="bk-cal">
+          <div class="cal-box">
+            <div class="cal-nav"><button id="calPrev" aria-label="Previous month">‹</button><strong id="calMonth"></strong><button id="calNext" aria-label="Next month">›</button></div>
+            <div class="cal-dow"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+          <div class="slot-box"><h3 id="slotDay">Select a date</h3><div class="slot-list" id="slotList"></div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
